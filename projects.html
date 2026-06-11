@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" type="image/png" href="./img/penguin.png" />
@@ -288,10 +289,16 @@
     <script>
       function acceptCookies() {
         document.getElementById("cookieConsent").style.display = "none";
+        setTimeout(() => {
+          document.getElementById("cookieConsent").style.display = "block";
+        }, 90000);
       }
 
       function rejectCookies() {
         document.getElementById("cookieConsent").style.display = "none";
+        setTimeout(() => {
+          document.getElementById("cookieConsent").style.display = "block";
+        }, 90000);
       }
 
       // Chatbot functionality - show suggestion bubbles in continuous cycle
