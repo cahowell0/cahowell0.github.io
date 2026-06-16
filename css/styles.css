@@ -10,11 +10,11 @@ a {
 }
 body {
   cursor: url('../img/penguin-cursor.png') 12 12, auto;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a:hover,
@@ -410,9 +410,6 @@ nav li a:hover {
   }
 }
 @media screen and (max-width: 400px) {
-  nav {
-    top: 0px;
-  }
   nav li {
     text-align: center;
     width: 100%;
