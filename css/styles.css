@@ -8,6 +8,38 @@ a {
   padding: 0;
   font-family: Helvetica, sans-serif, "Times New Roman", Times, serif;
 }
+body {
+  cursor: url('../img/penguin-cursor.png') 12 12, auto;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a:hover,
+button:hover,
+[onclick]:hover {
+  cursor: none !important;
+}
+
+#penguin-spin-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  margin-top: -12px;
+  display: none;
+  animation: penguin-spin-ccw 0.64s linear infinite;
+}
+
+@keyframes penguin-spin-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
 header {
   background-color: #ffffff;
   padding: 30px;
@@ -61,30 +93,30 @@ nav li a {
 }
 
 .sidebar {
-  width: 250px;
+  width: 329px;
   flex-shrink: 0;
   position: sticky;
   top: 200px;
   height: fit-content;
 }
 
-.sidebar-ad {
+.sidebar-panel {
   background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
   border: 1px solid #ffcccc;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  padding: 15px;
+  border-radius: 14px;
+  margin-bottom: 35px;
+  padding: 26px;
   position: relative;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   text-align: center;
   z-index: -1;
 }
 
-.sidebar-ad .ad-label {
+.sidebar-panel .panel-label {
   position: absolute;
-  top: 3px;
-  left: 8px;
-  font-size: 9px;
+  top: 5px;
+  left: 14px;
+  font-size: 11px;
   color: #999;
   text-transform: uppercase;
   font-weight: 500;
@@ -92,30 +124,68 @@ nav li a {
   z-index: -1;
 }
 
-.sidebar-ad-content h4 {
-  margin: 0 0 8px 0;
-  font-size: 14px;
+.sidebar-panel-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.promo-block.loading {
+  min-height: 60px;
+}
+
+.promo-block.loading .promo-content,
+.promo-block.loading .panel-label {
+  display: none;
+}
+
+.promo-block .promo-content {
+  animation: promoReveal 0.5s ease-out;
+}
+
+@keyframes promoReveal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.promo-block-img {
+  width: 100%;
+  height: 176px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+#thirdPromoImg {
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-panel-content h4 {
+  margin: 0 0 14px 0;
+  font-size: 16px;
   color: #333;
   font-weight: 600;
   z-index: -1;
 }
 
-.sidebar-ad-content p {
-  margin: 0 0 12px 0;
-  font-size: 12px;
+.sidebar-panel-content p {
+  margin: 0 0 21px 0;
+  font-size: 16px;
   color: #555;
   line-height: 1.3;
   padding: 0 !important;
   z-index: -1;
 }
 
-.sidebar-ad-button {
+.sidebar-panel-button {
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
   color: white;
   border: none;
-  padding: 6px 15px;
-  border-radius: 15px;
-  font-size: 11px;
+  padding: 11px 26px;
+  border-radius: 26px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -123,7 +193,7 @@ nav li a {
   z-index: -1;
 }
 
-.sidebar-ad-button:hover {
+.sidebar-panel-button:hover {
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(255, 107, 107, 0.4);
   z-index: -1;
@@ -202,10 +272,6 @@ footer a:visited {
 }
 .footer-text {
   vertical-align: 3pt;
-}
-.projects-text {
-  font-weight: 102;
-  margin-bottom: 200px;
 }
 .penguin-img {
   width: 18px;
@@ -310,7 +376,7 @@ nav li a:hover {
     margin-bottom: 30px;
   }
 
-  .sidebar-ad {
+  .sidebar-panel {
     flex: 1;
     z-index: -1;
   }
@@ -321,11 +387,6 @@ nav li a:hover {
 }
 
 @media screen and (max-width: 610px) {
-  article ul.images li {
-    width: 100%;
-    margin: 20px auto;
-    display: block;
-  }
   nav li {
     font-size: 14px;
   }
@@ -364,23 +425,11 @@ nav li a:hover {
   header {
     position: sticky;
   }
-  .summer-banner-text {
-    font-size: 12px;
-  }
-  .summer-banner-emoji {
-    font-size: 16px;
-  }
-  .summer-banner-content {
-    gap: 8px;
-  }
   .signup-section {
     padding: 10px;
   }
   footer {
     padding-bottom: 180px;
-  }
-  .projects-text {
-    margin-bottom: 180px;
   }
 }
 
@@ -679,10 +728,13 @@ nav li a:hover {
 .chatbot-messages {
   flex: 1;
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
+  scroll-behavior: smooth;
 }
 
 .bot-message,
@@ -691,8 +743,22 @@ nav li a:hover {
   border-radius: 18px;
   max-width: 80%;
   word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
   font-size: 14px;
   line-height: 1.4;
+  animation: chatMessageIn 0.3s ease-out;
+}
+
+@keyframes chatMessageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .bot-message {
@@ -823,7 +889,7 @@ nav li a:hover {
 }
 
 /* Fake Ad Styles */
-.fake-ad {
+.promo-block {
   background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
   border: 1px solid #b3d9ff;
   border-radius: 8px;
@@ -836,7 +902,7 @@ nav li a:hover {
   z-index: 1;
 }
 
-.ad-label {
+.panel-label {
   position: absolute;
   top: 5px;
   left: 10px;
@@ -848,7 +914,7 @@ nav li a:hover {
   text-align: center;
 }
 
-.ad-content h4 {
+.promo-content h4 {
   margin: 0 0 10px 0;
   font-size: 18px;
   color: #333;
@@ -856,7 +922,7 @@ nav li a:hover {
   text-align: center;
 }
 
-.ad-content p {
+.promo-content p {
   margin: 0 0 15px 0;
   font-size: 14px;
   color: #555;
@@ -864,7 +930,7 @@ nav li a:hover {
   padding: 0 !important;
 }
 
-.ad-button {
+.promo-button {
   background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   color: white;
   border: none;
@@ -877,28 +943,28 @@ nav li a:hover {
   box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
 }
 
-.ad-button:hover {
+.promo-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
   background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
 }
 
 @media screen and (max-width: 610px) {
-  .fake-ad {
+  .promo-block {
     margin: 20px 0;
     padding: 15px;
     text-align: center;
   }
 
-  .ad-content h4 {
+  .promo-content h4 {
     font-size: 16px;
   }
 
-  .ad-content p {
+  .promo-content p {
     font-size: 13px;
   }
 
-  .ad-button {
+  .promo-button {
     padding: 8px 20px;
     font-size: 13px;
   }
@@ -1304,7 +1370,5 @@ nav li a:hover {
     padding-bottom: 220px;
   }
 
-  .projects-text {
-    margin-bottom: 220px;
-  }
 }
+

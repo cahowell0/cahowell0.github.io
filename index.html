@@ -8,25 +8,30 @@
     <link rel="apple-touch-icon" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./img/penguin.png" />
-    <title>Christian Howell</title>
+    <title>Christian Howell: Anatomy of a Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      emailjs.init("MpEdHmzyYZ_cDB5Tw");
+    </script>
   </head>
 
   <body>
-    <div class="top-banner">
+    <div class="top-banner" id="topBanner">
       <div class="top-banner-content">
         <span class="top-banner-emoji">🫡</span>
         <span class="top-banner-text"
           ><a
             href="https://explore.org/livecams/puffins/puffin-burrow-cam?emci=ff86c3ec-214e-f111-8ef2-000d3a14b640&emdi=68747c7f-7650-f111-8ef2-000d3a14b640&ceid=7900057"
             target="_blank"
-            >PUFFIN CAMERA</a
-          >: LIVE PUFFIN FEED FROM BURROW IN MAINE</span
+            >BANNER ANNOUNCEMENT</a
+          >: No website would be complete without a top banner taking up
+          <span id="bannerPixelSize">[amount]</span> pixels of vertical space</span
         >
         <span class="top-banner-emoji">🫡</span>
       </div>
     </div>
     <header>
-      <h1>Christian Howell</h1>
+      <h1>Christian Howell: Anatomy of a Website</h1>
     </header>
 
     <nav class="main-nav">
@@ -42,47 +47,47 @@
 
     <div class="content-wrapper">
       <aside class="sidebar">
-        <div class="sidebar-ad">
-          <div class="ad-label">Sponsored</div>
-          <div class="sidebar-ad-content">
-            <h4>Camera Gear in Good Condition</h4>
+        <div class="sidebar-panel" id="firstPanel">
+          <div class="panel-label">Sponsored</div>
+          <div class="sidebar-panel-content">
+            <h4>Sidebar Advertisement Here</h4>
             <p>
-              Have any old camera gear that is no longer in use? Contact me and I will take it off your
-              hands!
+              An ad that no one wants and no one clicks on, but it takes up
+              <span id="panelSize1">[this much space]</span> on your screen.
             </p>
-            <button
-              class="sidebar-ad-button"
-              onclick="window.open('mailto:lavish-oyster.6r@icloud.com', '_blank')"
-            >
-              Contact Me
+            <img src="./img/IMG_1104.JPG" class="sidebar-panel-img" alt="IMG_1104" />
+            <button class="sidebar-panel-button" onclick="window.open('./img/IMG_1104.JPG', '_blank')">
+              Button here
             </button>
           </div>
         </div>
 
-        <div class="sidebar-ad">
-          <div class="ad-label">Advertisement</div>
-          <div class="sidebar-ad-content">
-            <h4>📚 Tech Books</h4>
-            <p>Find someone with knowledge obtained from advanced mathematics textbooks</p>
-            <button
-              class="sidebar-ad-button"
-              onclick="window.open('mailto:lavish-oyster.6r@icloud.com', '_blank')"
-            >
-              Hire Now
+        <div class="sidebar-panel" id="secondPanel">
+          <div class="panel-label">Advertisement</div>
+          <div class="sidebar-panel-content">
+            <h4>Second Sidebar Ad</h4>
+            <p>
+              A second ad, almost identical to the first. Fills up
+              <span id="panelSize2">[this much space]</span> on your screen.
+            </p>
+            <img src="./img/IMG_1113.JPG" class="sidebar-panel-img" alt="IMG_1113" />
+            <button class="sidebar-panel-button" onclick="window.open('./img/IMG_1113.JPG', '_blank')">
+              Click here
             </button>
           </div>
         </div>
 
-        <div class="sidebar-ad">
-          <div class="ad-label">Sponsored</div>
-          <div class="sidebar-ad-content">
-            <h4>🎯 Website Design</h4>
-            <p>Want your website to look like this one? Start building today.</p>
-            <button
-              class="sidebar-ad-button"
-              onclick="window.open('mailto:lavish-oyster.6r@icloud.com', '_blank')"
-            >
-              Get Started
+        <div class="sidebar-panel" id="thirdPanel">
+          <div class="panel-label">Sponsored</div>
+          <div class="sidebar-panel-content">
+            <h4>Last Sidebar Ad</h4>
+            <p>
+              Three sidebar ads for completeness. This advertisement is a little bit bigger than the
+              others and takes up <span id="panelSize3">[this much space]</span> on your screen.
+            </p>
+            <img src="./img/IMG_1330.jpg" class="sidebar-panel-img" alt="IMG_1330" />
+            <button class="sidebar-panel-button" onclick="window.open('./img/IMG_1330.jpg', '_blank')">
+              Click Me!
             </button>
           </div>
         </div>
@@ -92,14 +97,16 @@
         <article>
           <p>Hi.</p>
 
-          <div class="fake-ad">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-content">
-              <h4>🚀 Boost Your Coding Skills!</h4>
+          <div class="promo-block" id="midTextPromo">
+            <div class="panel-label">Advertisement</div>
+            <div class="promo-content">
+              <h4>Mid-Text Advertisement</h4>
               <p>
-                Hire someone with experience with Python, C#, C++, SQL & more. Send in your offer today!
+                This advert takes a bit of time to load, so it can't be missed when it finally pops up.
+                It also takes up <span id="midPromoSize">[this much space]</span>.
               </p>
-              <button class="ad-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
+              <img src="img/IMG_1989.jpg" class="promo-block-img" alt="IMG_1989" />
+              <button class="promo-button" onclick="window.open('img/IMG_1989.jpg', '_blank')">
                 Learn More
               </button>
             </div>
@@ -113,16 +120,18 @@
             things and taking on new challenges.
           </p>
 
-          <div class="fake-ad">
-            <div class="ad-label">Sponsored</div>
-            <div class="ad-content">
-              <h4>💼 Remote Jobs for ML Engineers</h4>
+          <div class="promo-block" id="secondMidPromo">
+            <div class="panel-label">Sponsored</div>
+            <div class="promo-content">
+              <h4>Middle Mid-Text Advert</h4>
               <p>
-                Experience with remote positions for ML and R&D jobs across the nation. Applied to 500+
-                machine learning positions!
+                This ad takes even longer to load, but all in all, taking up
+                <span id="secondMidPromoSize">[this much space]</span>, it should be about as obnoxious
+                as the previous one
               </p>
-              <button class="ad-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-                Find the Perfect Candidate
+              <img src="img/IMG_2002.jpg" class="promo-block-img" alt="IMG_2002" />
+              <button class="promo-button" onclick="window.open('img/IMG_2002.jpg', '_blank')">
+                Button!
               </button>
             </div>
           </div>
@@ -139,13 +148,20 @@
             document types.
           </p>
 
-          <div class="fake-ad">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-content">
-              <h4>📊 Mastered Data Science in 2023</h4>
-              <p>From beginner to expert in 2 years. Worked with 50+ students in BYU's ACME program!</p>
-              <button class="ad-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-                View Courses
+          <div class="promo-block" id="thirdMidPromo">
+            <div class="panel-label">Advertisement</div>
+            <div class="promo-content">
+              <h4>Final Mid-Text Promo</h4>
+              <p>
+                This promo takes up <span id="thirdMidPromoSize">[this much space]</span>. It loads
+                immediately, but sometimes changes itself depending on its mood.
+              </p>
+              <img src="img/IMG_2041.jpg" id="thirdPromoImg" class="promo-block-img" alt="IMG_2041" />
+              <button
+                class="promo-button"
+                onclick="window.open(document.getElementById('thirdPromoImg').src, '_blank')"
+              >
+                Click!
               </button>
             </div>
           </div>
@@ -156,7 +172,7 @@
             from you.
           </p>
           <p>
-            This text was originally written in Helvetica.
+            This text was originally written using Helvetica.
             <img class="penguin-img" src="img/penguin.png" width="18px" height="18px" />
           </p>
         </article>
@@ -165,15 +181,24 @@
 
     <section class="signup-section">
       <div class="signup-container">
-        <h2>Stay Connected</h2>
+        <h2>Plea for Connection</h2>
         <p class="signup-description">
-          Provide your email and receive a resumé delivered straight to your inbox
+          No getting rid of this desparate plea for subscribers. Join my email list below and I'll send
+          you a "Hi!" This section takes up
+          <span id="signupSectionSize">[this much space]</span> vertically.
         </p>
-        <form class="signup-form">
-          <input type="email" class="signup-input" placeholder="Enter your email" required />
+        <form class="signup-form" onsubmit="handleSignupSubmit(event)">
+          <input
+            type="email"
+            id="signupEmail"
+            class="signup-input"
+            placeholder="Enter your email"
+            autocomplete="off"
+            required
+          />
           <button type="submit" class="signup-button">Subscribe</button>
         </form>
-        <p class="signup-disclaimer">No spam, Subscribe anytime</p>
+        <p class="signup-disclaimer">No spam; Subscribe anytime</p>
       </div>
     </section>
 
@@ -183,7 +208,10 @@
 
     <div class="cookie-consent" id="cookieConsent">
       <div class="cookie-content">
-        <p>We use cookies to enhance your experience</p>
+        <p>
+          We don't use cookies to enhance your experience, but this popup will keep popping up and
+          blocking (<span id="cookiePixelSize">[this much space]</span>).
+        </p>
         <div class="cookie-buttons">
           <button class="cookie-reject" onclick="rejectCookies()">Reject</button>
           <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
@@ -197,11 +225,18 @@
         <button class="popup-close" onclick="closeNewsletterPopup()">×</button>
         <h2>📧 Frustrated with popups?</h2>
         <p>
-          No solution for that, but there's no need to be frustrated with the wrong candidate for your
-          job! Find out first when Christian is open to work!
+          This one takes up <span id="newsletterPopupSize">[this much space]</span>, and is probably the
+          most frustrating aspect of this entire website. If you want a quick "Hi!" let me know your
+          email and I'll send you a greeting!
         </p>
         <form class="popup-form" onsubmit="handleNewsletterSubmit(event)">
-          <input type="email" class="popup-input" placeholder="Enter your email address" required />
+          <input
+            type="email"
+            class="popup-input"
+            placeholder="Enter your email address"
+            autocomplete="off"
+            required
+          />
           <button type="submit" class="popup-button">Subscribe Now</button>
         </form>
         <p class="popup-disclaimer">Join subscribers. Subscribe anytime.</p>
@@ -212,28 +247,28 @@
       <div class="popup-overlay" onclick="closeExitIntentPopup()"></div>
       <div class="exit-popup-content">
         <button class="popup-close" onclick="closeExitIntentPopup()">×</button>
-        <h2>🛑 Wait! Don't Leave Yet!</h2>
+        <h2>Wait! Don't Leave Yet!</h2>
         <p>
-          Before you go, grab your <strong>FREE Candidate Resumé</strong> - packed with essential skills,
-          experiences, and impressive classes!
+          I saw that your cursor was moving northward, so here's a jumbo popup to take up your whole
+          screen!
         </p>
         <form class="popup-form" onsubmit="handleExitIntentSubmit(event)">
           <input
             type="email"
             class="popup-input"
-            placeholder="Enter your email for instant download"
+            placeholder="Enter your email for a quick 'Hi!'"
+            autocomplete="off"
             required
           />
-          <button type="submit" class="exit-popup-button">Get My Free Resumé</button>
+          <button type="submit" class="exit-popup-button">Get My Free Hi</button>
         </form>
-        <p class="popup-disclaimer">✅ Instant download • ✅ No spam • ✅ Subscribe anytime</p>
+        <p class="popup-disclaimer">✅ Free "Hi" • ✅ No spam • ✅ Subscribe anytime</p>
         <div class="exit-popup-benefits">
           <p><strong>What's included:</strong></p>
           <ul>
-            <li>🔥 15+ must-have quantitative skills</li>
-            <li>🚀 Python code projects</li>
-            <li>📊 Data preprocessing experiences</li>
-            <li>💡 Pulbications and Conferences</li>
+            <li>1 free email</li>
+            <li>1 quick "Hi!"</li>
+            <li>Not much else</li>
           </ul>
         </div>
       </div>
@@ -244,27 +279,29 @@
         <div class="suggestions-content">
           <h3>👋 Hi there!</h3>
           <p>
-            I'm here to help you learn more about Christian's work and experience. Click here to start a
-            conversation!
+            I'm a pop-up that you can talk with! I take
+            <span id="bubble1Size">[this much space]</span> right now, but I change size and shape
+            regularly!
           </p>
         </div>
       </div>
       <div class="chatbot-suggestions suggestion-bubble-2" id="suggestionBubble2" style="display: none">
         <div class="suggestions-content">
-          <h3>💼 What can I tell you?</h3>
-          <ul>
-            <li>Professional experience at MetaSource, Penn State, and Argonne</li>
-            <li>Machine Learning and Applied Mathematics background</li>
-            <li>Current projects and research interests</li>
-          </ul>
+          <h3>I can't tell you much</h3>
+          <p>
+            But I grew to take up <span id="bubble2Size">[this much space]</span>. You may notice that
+            there is no close button on these dialogue bubbles. I assure you, that is a feature, not a
+            bug. If any kid off the street with a helmet and a pair of goggles could close these bubbles,
+            then nobody would try out the chat.
+          </p>
         </div>
       </div>
       <div class="chatbot-suggestions suggestion-bubble-3" id="suggestionBubble3" style="display: none">
         <div class="suggestions-content">
-          <h3>🚀 Ready to connect?</h3>
+          <h3>Ready to chat?</h3>
           <p>
-            Ask me anything about Christian's skills, projects, or how to get in touch for collaboration
-            opportunities!
+            Just click on the little chat button to chat! This bubble will still show up behind and will
+            take up <span id="bubble3Size">[this much space]</span>.
           </p>
         </div>
       </div>
@@ -278,7 +315,9 @@
         </div>
         <div class="chatbot-messages" id="chatbotMessages">
           <div class="bot-message">
-            Hi! I'm here to help. Feel free to ask me about Christian's work, experience, or projects.
+            Hi! I'm here. Feel free to ask me about content on the website, the space that this chat
+            window takes up (<span id="chatWindowSize">[chat window size]</span>), or anything else that
+            I likely can't help out with.
           </div>
         </div>
         <div class="chatbot-input">
@@ -293,38 +332,46 @@
       </div>
     </div>
 
+    <img id="penguin-spin-cursor" src="./img/penguin-cursor.png" alt="" />
+
     <script>
       function acceptCookies() {
         document.getElementById("cookieConsent").style.display = "none";
-        setTimeout(() => {
-          document.getElementById("cookieConsent").style.display = "block";
-        }, 90000);
       }
 
       function rejectCookies() {
         document.getElementById("cookieConsent").style.display = "none";
-        setTimeout(() => {
-          document.getElementById("cookieConsent").style.display = "block";
-        }, 90000);
       }
 
       // Chatbot functionality - show suggestion bubbles in continuous cycle
+      function measureBubble(bubbleId, spanId) {
+        const el = document.getElementById(bubbleId);
+        const span = document.getElementById(spanId);
+        if (el && span) {
+          const rect = el.getBoundingClientRect();
+          span.textContent = Math.round(rect.width) + " × " + Math.round(rect.height) + " pixels";
+        }
+      }
+
       function cycleChatbotBubbles() {
         // Show bubble 1
         setTimeout(() => {
           document.getElementById("suggestionBubble1").style.display = "block";
+          measureBubble("suggestionBubble1", "bubble1Size");
         }, 5000);
 
         // Switch to bubble 2
         setTimeout(() => {
           document.getElementById("suggestionBubble1").style.display = "none";
           document.getElementById("suggestionBubble2").style.display = "block";
+          measureBubble("suggestionBubble2", "bubble2Size");
         }, 10000);
 
         // Switch to bubble 3
         setTimeout(() => {
           document.getElementById("suggestionBubble2").style.display = "none";
           document.getElementById("suggestionBubble3").style.display = "block";
+          measureBubble("suggestionBubble3", "bubble3Size");
         }, 15000);
 
         // Hide bubble 3 and restart cycle
@@ -351,6 +398,14 @@
           if (scrollPercentage >= 33) {
             document.getElementById("newsletterPopup").style.display = "flex";
             popupShown = true;
+            requestAnimationFrame(() => {
+              const card = document.querySelector("#newsletterPopup .popup-content");
+              const span = document.getElementById("newsletterPopupSize");
+              if (card && span) {
+                const rect = card.getBoundingClientRect();
+                span.textContent = Math.round(rect.width) + " × " + Math.round(rect.height) + " pixels";
+              }
+            });
           }
         }
       });
@@ -361,37 +416,22 @@
 
       function handleNewsletterSubmit(event) {
         event.preventDefault();
-        alert("Thank you for subscribing! (This is a demo)");
+        alert("Thank you for subscribing!");
         closeNewsletterPopup();
       }
 
       // Exit intent popup functionality
       let exitIntentShown = false;
 
-      document.addEventListener("mouseleave", (e) => {
-        if (!exitIntentShown && e.clientY <= 0) {
+      document.addEventListener("mousemove", (e) => {
+        if (!exitIntentShown && e.clientY < window.innerHeight * 0.1) {
           document.getElementById("exitIntentPopup").style.display = "flex";
           exitIntentShown = true;
-        }
-      });
-
-      window.addEventListener("beforeunload", (e) => {
-        if (!exitIntentShown) {
-          document.getElementById("exitIntentPopup").style.display = "flex";
-          exitIntentShown = true;
-          e.preventDefault();
-          e.returnValue = "";
         }
       });
 
       function closeExitIntentPopup() {
         document.getElementById("exitIntentPopup").style.display = "none";
-      }
-
-      function handleExitIntentSubmit(event) {
-        event.preventDefault();
-        alert("Thank you! Your ML cheat sheet is downloading... (This is a demo)");
-        closeExitIntentPopup();
       }
 
       function toggleChatbot() {
@@ -407,7 +447,14 @@
           bubble3.style.display = "none";
         }
 
-        window.style.display = window.style.display === "none" ? "block" : "none";
+        window.style.display = window.style.display === "none" ? "flex" : "none";
+        if (window.style.display === "flex") {
+          requestAnimationFrame(() => {
+            const rect = window.getBoundingClientRect();
+            document.getElementById("chatWindowSize").textContent =
+              Math.round(rect.width) + " × " + Math.round(rect.height) + " pixels";
+          });
+        }
       }
 
       function closeChatbot() {
@@ -418,6 +465,119 @@
         if (event.key === "Enter") {
           sendMessage();
         }
+      }
+
+      function updateAdPixelSize() {
+        [
+          ["firstPanel", "panelSize1"],
+          ["secondPanel", "panelSize2"],
+          ["thirdPanel", "panelSize3"],
+          ["cookieConsent", "cookiePixelSize"],
+          ["midTextPromo", "midPromoSize"],
+          ["secondMidPromo", "secondMidPromoSize"],
+          ["thirdMidPromo", "thirdMidPromoSize"],
+        ].forEach(([adId, spanId]) => {
+          const ad = document.getElementById(adId);
+          const span = document.getElementById(spanId);
+          if (ad && span) {
+            const rect = ad.getBoundingClientRect();
+            span.textContent = Math.round(rect.width) + " × " + Math.round(rect.height) + " pixels";
+          }
+        });
+
+        const banner = document.getElementById("topBanner");
+        const bannerSpan = document.getElementById("bannerPixelSize");
+        if (banner && bannerSpan) {
+          bannerSpan.textContent = Math.round(banner.getBoundingClientRect().height);
+        }
+
+        const signup = document.querySelector(".signup-section");
+        const signupSpan = document.getElementById("signupSectionSize");
+        if (signup && signupSpan) {
+          signupSpan.textContent = Math.round(signup.getBoundingClientRect().height) + " pixels";
+        }
+      }
+
+      // Spinning penguin cursor on hover
+      const spinCursor = document.getElementById("penguin-spin-cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        spinCursor.style.left = e.clientX + "px";
+        spinCursor.style.top = e.clientY + "px";
+      });
+
+      document.addEventListener("mouseover", (e) => {
+        if (e.target.closest("a, button, [onclick]")) {
+          spinCursor.style.display = "block";
+        } else {
+          spinCursor.style.display = "none";
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("input[type='email']").forEach((el) => (el.value = ""));
+        updateAdPixelSize();
+        ["midTextPromo", "secondMidPromo"].forEach((id) => {
+          const el = document.getElementById(id);
+          el.classList.add("loading");
+          setTimeout(() => el.classList.remove("loading"), 3000);
+        });
+      });
+      window.addEventListener("resize", updateAdPixelSize);
+
+      // Alternating images for third mid-text promo
+      const thirdPromoImg = document.getElementById("thirdPromoImg");
+      const thirdPromoImages = ["img/IMG_2041.jpg", "img/IMG_2072.jpg"];
+      const thirdPromoHeights = ["176px", "202px"];
+      let thirdPromoIndex = 0;
+      setInterval(() => {
+        // Fade out image
+        thirdPromoImg.style.opacity = "0";
+        setTimeout(() => {
+          // Collapse box to text-only size
+          thirdPromoImg.style.display = "none";
+          setTimeout(() => {
+            // Swap image then fade back in
+            thirdPromoIndex = (thirdPromoIndex + 1) % thirdPromoImages.length;
+            thirdPromoImg.src = thirdPromoImages[thirdPromoIndex];
+            thirdPromoImg.style.height = thirdPromoHeights[thirdPromoIndex];
+            thirdPromoImg.style.display = "block";
+            requestAnimationFrame(() =>
+              requestAnimationFrame(() => {
+                thirdPromoImg.style.opacity = "1";
+              }),
+            );
+          }, 300);
+        }, 200);
+      }, 8000);
+
+      function handleSignupSubmit(event) {
+        event.preventDefault();
+        const email = document.getElementById("signupEmail").value.trim();
+        emailjs
+          .send("service_nhiyukv", "template_0gk3gmm", { subscriber_email: email })
+          .then(() => {
+            alert("Thanks for subscribing!");
+            event.target.reset();
+          })
+          .catch(() => {
+            alert("Something went wrong. Please try again.");
+          });
+      }
+
+      function handleExitIntentSubmit(event) {
+        event.preventDefault();
+        const email = event.target.querySelector("input[type='email']").value.trim();
+        emailjs
+          .send("service_nhiyukv", "template_0gk3gmm", { subscriber_email: email })
+          .then(() => {
+            alert("Thanks for subscribing!");
+            event.target.reset();
+            closeExitIntentPopup();
+          })
+          .catch(() => {
+            alert("Something went wrong. Please try again.");
+          });
       }
 
       function sendMessage() {
@@ -432,6 +592,7 @@
         userMessage.className = "user-message";
         userMessage.textContent = message;
         messagesContainer.appendChild(userMessage);
+        messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: "smooth" });
 
         // Clear input
         input.value = "";
@@ -441,9 +602,9 @@
           const botMessage = document.createElement("div");
           botMessage.className = "bot-message";
           botMessage.textContent =
-            "Thanks for your message! This is a demo chatbot. For real inquiries, please use the contact information in the footer.";
+            "I can't help with that.  You can try to ask something else and I'll give you an irrelevant stock reply.";
           messagesContainer.appendChild(botMessage);
-          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+          messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: "smooth" });
         }, 1000);
       }
     </script>
