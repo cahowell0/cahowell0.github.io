@@ -4,17 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="icon" type="image/png" href="./img/penguin.png" />
     <link rel="apple-touch-icon" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./img/penguin.png" />
     <title>Christian Howell: Anatomy of a Website</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-      emailjs.init("MpEdHmzyYZ_cDB5Tw");
-    </script>
-    <script data-goatcounter="https://cahowell0.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer src="./js/site.js"></script>
+    <script data-goatcounter="https://cahowell0.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
 
   <body>
@@ -39,7 +35,7 @@
     <nav class="main-nav">
       <ul>
         <li>
-          <a href="./index.html">About <img class="penguin-img-big" src="img/penguin.png" /></a>
+          <a href="./index.html">About <img class="penguin-img-big" src="img/penguin.png" alt="" /></a>
         </li>
         <li><a href="./resume/Resume2025.pdf" target="_blank">Resume</a></li>
         <li><a href="https://github.com/cahowell0" target="_blank">Github</a></li>
@@ -175,7 +171,7 @@
           </p>
           <p>
             This text was originally written using Helvetica.
-            <img class="penguin-img" src="img/penguin.png" width="18px" height="18px" />
+            <img class="penguin-img" src="img/penguin.png" width="18" height="18" alt="" />
           </p>
         </article>
       </main>
@@ -291,7 +287,7 @@
         <div class="suggestions-content">
           <h3>I can't tell you much</h3>
           <p>
-            But I grew to take up <span id="bubble2Size">[this much space]</span>. You may notice that
+            But I grow to take up <span id="bubble2Size">[this much space]</span>. You may notice that
             there is no close button on these dialogue bubbles. I assure you, that is a feature, not a
             bug. If any kid off the street with a helmet and a pair of goggles could close these bubbles,
             then nobody would try out the chat.
@@ -337,138 +333,7 @@
     <img id="penguin-spin-cursor" src="./img/penguin-cursor.png" alt="" />
 
     <script>
-      function acceptCookies() {
-        document.getElementById("cookieConsent").style.display = "none";
-      }
-
-      function rejectCookies() {
-        document.getElementById("cookieConsent").style.display = "none";
-      }
-
-      // Chatbot functionality - show suggestion bubbles in continuous cycle
-      function measureBubble(bubbleId, spanId) {
-        const el = document.getElementById(bubbleId);
-        const span = document.getElementById(spanId);
-        if (el && span) {
-          const rect = el.getBoundingClientRect();
-          span.textContent = Math.round(rect.width) + " × " + Math.round(rect.height) + " pixels";
-        }
-      }
-
-      function cycleChatbotBubbles() {
-        // Show bubble 1
-        setTimeout(() => {
-          document.getElementById("suggestionBubble1").style.display = "block";
-          measureBubble("suggestionBubble1", "bubble1Size");
-        }, 5000);
-
-        // Switch to bubble 2
-        setTimeout(() => {
-          document.getElementById("suggestionBubble1").style.display = "none";
-          document.getElementById("suggestionBubble2").style.display = "block";
-          measureBubble("suggestionBubble2", "bubble2Size");
-        }, 10000);
-
-        // Switch to bubble 3
-        setTimeout(() => {
-          document.getElementById("suggestionBubble2").style.display = "none";
-          document.getElementById("suggestionBubble3").style.display = "block";
-          measureBubble("suggestionBubble3", "bubble3Size");
-        }, 15000);
-
-        // Hide bubble 3 and restart cycle
-        setTimeout(() => {
-          document.getElementById("suggestionBubble3").style.display = "none";
-          cycleChatbotBubbles(); // Restart the cycle
-        }, 20000);
-      }
-
-      // Start the initial cycle
-      cycleChatbotBubbles();
-
-      // Newsletter popup functionality
-      let popupShown = false;
-
-      window.addEventListener("scroll", () => {
-        if (!popupShown) {
-          const scrollPosition = window.scrollY;
-          const documentHeight = document.documentElement.scrollHeight;
-          const windowHeight = window.innerHeight;
-          const scrollableHeight = documentHeight - windowHeight;
-          const scrollPercentage = (scrollPosition / scrollableHeight) * 100;
-
-          if (scrollPercentage >= 33) {
-            document.getElementById("newsletterPopup").style.display = "flex";
-            popupShown = true;
-            requestAnimationFrame(() => {
-              const card = document.querySelector("#newsletterPopup .popup-content");
-              const span = document.getElementById("newsletterPopupSize");
-              if (card && span) {
-                const rect = card.getBoundingClientRect();
-                span.textContent = Math.round(rect.width) + " × " + Math.round(rect.height) + " pixels";
-              }
-            });
-          }
-        }
-      });
-
-      function closeNewsletterPopup() {
-        document.getElementById("newsletterPopup").style.display = "none";
-      }
-
-      function handleNewsletterSubmit(event) {
-        event.preventDefault();
-        alert("Thank you for subscribing!");
-        closeNewsletterPopup();
-      }
-
-      // Exit intent popup functionality
-      let exitIntentShown = false;
-
-      document.addEventListener("mousemove", (e) => {
-        if (!exitIntentShown && e.clientY < window.innerHeight * 0.1) {
-          document.getElementById("exitIntentPopup").style.display = "flex";
-          exitIntentShown = true;
-        }
-      });
-
-      function closeExitIntentPopup() {
-        document.getElementById("exitIntentPopup").style.display = "none";
-      }
-
-      function toggleChatbot() {
-        const window = document.getElementById("chatbotWindow");
-        const bubble1 = document.getElementById("suggestionBubble1");
-        const bubble2 = document.getElementById("suggestionBubble2");
-        const bubble3 = document.getElementById("suggestionBubble3");
-
-        // Hide all suggestion bubbles when opening chat
-        if (window.style.display === "none") {
-          bubble1.style.display = "none";
-          bubble2.style.display = "none";
-          bubble3.style.display = "none";
-        }
-
-        window.style.display = window.style.display === "none" ? "flex" : "none";
-        if (window.style.display === "flex") {
-          requestAnimationFrame(() => {
-            const rect = window.getBoundingClientRect();
-            document.getElementById("chatWindowSize").textContent =
-              Math.round(rect.width) + " × " + Math.round(rect.height) + " pixels";
-          });
-        }
-      }
-
-      function closeChatbot() {
-        document.getElementById("chatbotWindow").style.display = "none";
-      }
-
-      function handleChatInput(event) {
-        if (event.key === "Enter") {
-          sendMessage();
-        }
-      }
-
+      // Pixel size measurement (index-only)
       function updateAdPixelSize() {
         [
           ["firstPanel", "panelSize1"],
@@ -500,6 +365,8 @@
         }
       }
 
+      window.addEventListener("resize", updateAdPixelSize);
+
       // Spinning penguin cursor on hover
       const spinCursor = document.getElementById("penguin-spin-cursor");
 
@@ -509,62 +376,47 @@
       });
 
       document.addEventListener("mouseover", (e) => {
-        if (e.target.closest("a, button, [onclick]")) {
-          spinCursor.style.display = "block";
-        } else {
-          spinCursor.style.display = "none";
-        }
+        spinCursor.style.display = e.target.closest("a, button, [onclick]") ? "block" : "none";
       });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("input[type='email']").forEach((el) => (el.value = ""));
-        updateAdPixelSize();
-        ["midTextPromo", "secondMidPromo"].forEach((id) => {
-          const el = document.getElementById(id);
-          el.classList.add("loading");
-          setTimeout(() => el.classList.remove("loading"), 3000);
-        });
-      });
-      window.addEventListener("resize", updateAdPixelSize);
 
       // Alternating images for third mid-text promo
       const thirdPromoImg = document.getElementById("thirdPromoImg");
-      const thirdPromoImages = ["img/IMG_2041.jpg", "img/IMG_2072.jpg"];
-      const thirdPromoHeights = ["176px", "202px"];
+      const thirdPromos = [
+        { src: "img/IMG_2041.jpg", height: "176px" },
+        { src: "img/IMG_2072.jpg", height: "202px" },
+      ];
       let thirdPromoIndex = 0;
+
       setInterval(() => {
-        // Fade out image
         thirdPromoImg.style.opacity = "0";
         setTimeout(() => {
-          // Collapse box to text-only size
           thirdPromoImg.style.display = "none";
           setTimeout(() => {
-            // Swap image then fade back in
-            thirdPromoIndex = (thirdPromoIndex + 1) % thirdPromoImages.length;
-            thirdPromoImg.src = thirdPromoImages[thirdPromoIndex];
-            thirdPromoImg.style.height = thirdPromoHeights[thirdPromoIndex];
+            thirdPromoIndex = (thirdPromoIndex + 1) % thirdPromos.length;
+            thirdPromoImg.src = thirdPromos[thirdPromoIndex].src;
+            thirdPromoImg.style.height = thirdPromos[thirdPromoIndex].height;
             thirdPromoImg.style.display = "block";
-            requestAnimationFrame(() =>
-              requestAnimationFrame(() => {
-                thirdPromoImg.style.opacity = "1";
-              }),
-            );
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              thirdPromoImg.style.opacity = "1";
+            }));
           }, 300);
         }, 200);
       }, 8000);
+
+      // Email form submissions (use EmailJS)
+      function handleNewsletterSubmit(event) {
+        event.preventDefault();
+        alert("Thank you for subscribing!");
+        closeNewsletterPopup();
+      }
 
       function handleSignupSubmit(event) {
         event.preventDefault();
         const email = document.getElementById("signupEmail").value.trim();
         emailjs
           .send("service_nhiyukv", "template_0gk3gmm", { subscriber_email: email })
-          .then(() => {
-            alert("Thanks for subscribing!");
-            event.target.reset();
-          })
-          .catch(() => {
-            alert("Something went wrong. Please try again.");
-          });
+          .then(() => { alert("Thanks for subscribing!"); event.target.reset(); })
+          .catch(() => { alert("Something went wrong. Please try again."); });
       }
 
       function handleExitIntentSubmit(event) {
@@ -577,60 +429,38 @@
             event.target.reset();
             closeExitIntentPopup();
           })
-          .catch(() => {
-            alert("Something went wrong. Please try again.");
-          });
+          .catch(() => { alert("Something went wrong. Please try again."); });
       }
 
-      function sendMessage() {
-        const input = document.getElementById("chatInput");
-        const message = input.value.trim();
-        if (!message) return;
-
-        const messagesContainer = document.getElementById("chatbotMessages");
-
-        // Add user message
-        const userMessage = document.createElement("div");
-        userMessage.className = "user-message";
-        userMessage.textContent = message;
-        messagesContainer.appendChild(userMessage);
-        messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: "smooth" });
-
-        // Clear input
-        input.value = "";
-
-        // Add bot response after a short delay
-        setTimeout(() => {
-          const botMessage = document.createElement("div");
-          botMessage.className = "bot-message";
-          botMessage.textContent =
-            "I can't help with that.  You can try to ask something else and I'll give you an irrelevant stock reply.";
-          messagesContainer.appendChild(botMessage);
-          messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: "smooth" });
-        }, 1000);
-      }
+      document.addEventListener("DOMContentLoaded", () => {
+        emailjs.init("MpEdHmzyYZ_cDB5Tw");
+        updateAdPixelSize();
+        ["midTextPromo", "secondMidPromo"].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.classList.add("loading");
+            setTimeout(() => el.classList.remove("loading"), 3000);
+          }
+        });
+      });
     </script>
 
     <footer>
       <ul>
         <li>
-          <a class="footer-text"><img class="penguin-img" src="img/penguin.png" /> Christian Howell</a>
+          <span class="footer-text"><img class="penguin-img" src="img/penguin.png" alt="" /> Christian Howell</span>
         </li>
         <li>
-          <img src="img/github-logo.png" style="width: 20px; height: 20px" />
-          <a href="https://github.com/cahowell0" target="_blank" class="footer-text"
-            >github.com/cahowell0</a
-          >
+          <img src="img/github-logo.png" class="footer-icon-lg" alt="" />
+          <a href="https://github.com/cahowell0" target="_blank" class="footer-text">github.com/cahowell0</a>
         </li>
         <li>
-          <img src="img/linkedin-logo.png" style="width: 16px; height: 16px" />
-          <a href="https://www.linkedin.com/in/howellchristian" target="_blank" class="footer-text">
-            linkedin.com/in/howellchristian</a
-          >
+          <img src="img/linkedin-logo.png" class="footer-icon-sm" alt="" />
+          <a href="https://www.linkedin.com/in/howellchristian" target="_blank" class="footer-text">linkedin.com/in/howellchristian</a>
         </li>
         <li>
-          <img src="img/email-logo.png" style="width: 16px; height: 16px" />
-          <a class="footer-text">cahowell0@gmail.com</a>
+          <img src="img/email-logo.png" class="footer-icon-sm" alt="" />
+          <a href="mailto:cahowell0@gmail.com" class="footer-text">cahowell0@gmail.com</a>
         </li>
       </ul>
     </footer>

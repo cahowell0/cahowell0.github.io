@@ -4,13 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="icon" type="image/png" href="./img/penguin.png" />
     <link rel="apple-touch-icon" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./img/penguin.png" />
     <title>Blog - Christian Howell</title>
-    <script data-goatcounter="https://cahowell0.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+    <script defer src="./js/site.js"></script>
+    <script data-goatcounter="https://cahowell0.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
 
   <body>
@@ -35,7 +34,7 @@
         <li><a href="./resume/Resume2025.pdf" target="_blank">Resume</a></li>
         <li><a href="https://github.com/cahowell0" target="_blank">Github</a></li>
         <li>
-          <a href="./projects.html">Projects <img class="penguin-img-big" src="img/penguin.png" /> </a>
+          <a href="./projects.html">Projects <img class="penguin-img-big" src="img/penguin.png" alt="" /></a>
         </li>
       </ul>
     </nav>
@@ -290,157 +289,16 @@
     </div>
 
     <script>
-      function acceptCookies() {
-        document.getElementById("cookieConsent").style.display = "none";
-        setTimeout(() => {
-          document.getElementById("cookieConsent").style.display = "block";
-        }, 90000);
-      }
-
-      function rejectCookies() {
-        document.getElementById("cookieConsent").style.display = "none";
-        setTimeout(() => {
-          document.getElementById("cookieConsent").style.display = "block";
-        }, 90000);
-      }
-
-      // Chatbot functionality - show suggestion bubbles in continuous cycle
-      function cycleChatbotBubbles() {
-        // Show bubble 1
-        setTimeout(() => {
-          document.getElementById("suggestionBubble1").style.display = "block";
-        }, 5000);
-
-        // Switch to bubble 2
-        setTimeout(() => {
-          document.getElementById("suggestionBubble1").style.display = "none";
-          document.getElementById("suggestionBubble2").style.display = "block";
-        }, 10000);
-
-        // Switch to bubble 3
-        setTimeout(() => {
-          document.getElementById("suggestionBubble2").style.display = "none";
-          document.getElementById("suggestionBubble3").style.display = "block";
-        }, 15000);
-
-        // Hide bubble 3 and restart cycle
-        setTimeout(() => {
-          document.getElementById("suggestionBubble3").style.display = "none";
-          cycleChatbotBubbles(); // Restart the cycle
-        }, 20000);
-      }
-
-      // Start the initial cycle
-      cycleChatbotBubbles();
-
-      // Newsletter popup functionality
-      let popupShown = false;
-
-      window.addEventListener("scroll", () => {
-        if (!popupShown) {
-          const scrollPosition = window.scrollY;
-          const documentHeight = document.documentElement.scrollHeight;
-          const windowHeight = window.innerHeight;
-          const scrollableHeight = documentHeight - windowHeight;
-          const scrollPercentage = (scrollPosition / scrollableHeight) * 100;
-
-          if (scrollPercentage >= 33) {
-            document.getElementById("newsletterPopup").style.display = "flex";
-            popupShown = true;
-          }
-        }
-      });
-
-      function closeNewsletterPopup() {
-        document.getElementById("newsletterPopup").style.display = "none";
-      }
-
       function handleNewsletterSubmit(event) {
         event.preventDefault();
         alert("Thank you for subscribing! (This is a demo)");
         closeNewsletterPopup();
       }
 
-      // Exit intent popup functionality
-      let exitIntentShown = false;
-
-      document.addEventListener("mouseleave", (e) => {
-        if (!exitIntentShown && e.clientY <= 0) {
-          document.getElementById("exitIntentPopup").style.display = "flex";
-          exitIntentShown = true;
-        }
-      });
-
-      window.addEventListener("beforeunload", (e) => {
-        if (!exitIntentShown) {
-          document.getElementById("exitIntentPopup").style.display = "flex";
-          exitIntentShown = true;
-          e.preventDefault();
-          e.returnValue = "";
-        }
-      });
-
-      function closeExitIntentPopup() {
-        document.getElementById("exitIntentPopup").style.display = "none";
-      }
-
       function handleExitIntentSubmit(event) {
         event.preventDefault();
         alert("Thank you! Your ML cheat sheet is downloading... (This is a demo)");
         closeExitIntentPopup();
-      }
-
-      function toggleChatbot() {
-        const window = document.getElementById("chatbotWindow");
-        const bubble1 = document.getElementById("suggestionBubble1");
-        const bubble2 = document.getElementById("suggestionBubble2");
-        const bubble3 = document.getElementById("suggestionBubble3");
-
-        // Hide all suggestion bubbles when opening chat
-        if (window.style.display === "none") {
-          bubble1.style.display = "none";
-          bubble2.style.display = "none";
-          bubble3.style.display = "none";
-        }
-
-        window.style.display = window.style.display === "none" ? "block" : "none";
-      }
-
-      function closeChatbot() {
-        document.getElementById("chatbotWindow").style.display = "none";
-      }
-
-      function handleChatInput(event) {
-        if (event.key === "Enter") {
-          sendMessage();
-        }
-      }
-
-      function sendMessage() {
-        const input = document.getElementById("chatInput");
-        const message = input.value.trim();
-        if (!message) return;
-
-        const messagesContainer = document.getElementById("chatbotMessages");
-
-        // Add user message
-        const userMessage = document.createElement("div");
-        userMessage.className = "user-message";
-        userMessage.textContent = message;
-        messagesContainer.appendChild(userMessage);
-
-        // Clear input
-        input.value = "";
-
-        // Add bot response after a short delay
-        setTimeout(() => {
-          const botMessage = document.createElement("div");
-          botMessage.className = "bot-message";
-          botMessage.textContent =
-            "Thanks for your message! This is a demo chatbot. For real inquiries, please use the contact information in the footer.";
-          messagesContainer.appendChild(botMessage);
-          messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }, 1000);
       }
     </script>
   </body>
