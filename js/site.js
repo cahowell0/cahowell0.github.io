@@ -1,3 +1,34 @@
+// Spinning penguin cursor on hover
+const spinCursor = document.createElement("img");
+spinCursor.id = "penguin-spin-cursor";
+spinCursor.src = new URL("../img/penguin-cursor.png", document.currentScript.src).href;
+spinCursor.alt = "";
+document.body.appendChild(spinCursor);
+
+document.addEventListener("mousemove", (e) => {
+  spinCursor.style.left = e.clientX + "px";
+  spinCursor.style.top = e.clientY + "px";
+});
+
+document.addEventListener("mouseover", (e) => {
+  spinCursor.style.display = e.target.closest("a, button, [onclick]") ? "block" : "none";
+});
+
+// Shrinking header + side nav on portfolio page
+if (document.body.classList.contains('page-portfolio')) {
+  window.addEventListener('scroll', () => {
+    document.body.classList.toggle('scrolled', window.scrollY > 0);
+  });
+
+  const topNav = document.querySelector('nav.main-nav');
+  const sideNav = document.getElementById('sideNav');
+  if (topNav && sideNav) {
+    new IntersectionObserver((entries) => {
+      sideNav.classList.toggle('visible', !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(topNav);
+  }
+}
+
 // Cookie consent — re-shows after 90 seconds
 function acceptCookies() {
   document.getElementById("cookieConsent").style.display = "none";

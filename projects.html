@@ -7,299 +7,105 @@
     <link rel="apple-touch-icon" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./img/penguin.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./img/penguin.png" />
-    <title>Blog - Christian Howell</title>
+    <title>Christian Howell: Projects</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script defer src="./js/site.js"></script>
-    <script data-goatcounter="https://cahowell0.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script
+      data-goatcounter="https://cahowell0.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
   </head>
 
-  <body>
-    <div class="top-banner">
-      <div class="top-banner-content">
-        <span class="top-banner-emoji">🫡</span>
-        <span class="top-banner-text"
-          >HIRING OPPORTUNITY: Machine learning engineer may be looking for new opportunities to
-          work</span
-        >
-        <span class="top-banner-emoji">🫡</span>
-      </div>
-    </div>
-    <header>
-      <h1>Projects</h1>
-    </header>
+  <body class="page-portfolio">
     <nav class="main-nav">
       <ul>
         <li>
-          <a href="./index.html">About</a>
+          <a href="./index.html">Home</a>
         </li>
-        <li><a href="./resume/Resume2025.pdf" target="_blank">Resume</a></li>
-        <li><a href="https://github.com/cahowell0" target="_blank">Github</a></li>
         <li>
-          <a href="./projects.html">Projects <img class="penguin-img-big" src="img/penguin.png" alt="" /></a>
+          <a href="./portfolio.html"><span style="color: #38568c">Casa</span> delle Foglie </a>
         </li>
+        <li><a href="./books.html">Reading</a></li>
+        <li>
+          <a href="./projects.html">Projects</a
+          ><img class="penguin-img-big" src="img/penguin.png" alt="" />
+        </li>
+        <li><a href="./osomichi.html">僕の遅道</a></li>
       </ul>
     </nav>
-    <div class="content-wrapper">
-      <aside class="sidebar">
-        <div class="sidebar-panel">
-          <div class="panel-label">Sponsored</div>
-          <div class="sidebar-panel-content">
-            <h4>Camera Gear in Good Condition</h4>
-            <p>
-              Have any old camera gear that is no longer in use? Contact me and I will take it off your
-              hands!
-            </p>
-            <button class="sidebar-panel-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-              Try Now
-            </button>
-          </div>
-        </div>
 
-        <div class="sidebar-panel">
-          <div class="panel-label">Advertisement</div>
-          <div class="sidebar-panel-content">
-            <h4>Books Books Books</h4>
-            <p>I love reading books, so please send me recommendations!</p>
-            <button class="sidebar-panel-button" onclick="openBookSurvey()">Submit Recommendations</button>
-          </div>
-        </div>
+    <nav id="sideNav" class="side-nav">
+      <a href="./index.html">Home</a>
+      <a href="./portfolio.html"><span style="color: #38568c">Casa</span> delle Foglie </a>
+      <a href="./books.html">Reading</a>
+      <a href="./projects.html">Projects<img class="penguin-img" src="img/penguin.png" alt="" /></a>
+      <a href="./osomichi.html">僕の遅道</a>
+    </nav>
 
-        <div class="sidebar-panel">
-          <div class="panel-label">Sponsored</div>
-          <div class="sidebar-panel-content">
-            <h4>🎯 DevOps Tools</h4>
-            <p>Automate your workflow with CloudMaster. Start building today.</p>
-            <button class="sidebar-panel-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </aside>
+    <header>
+      <h1>Christian Howell: Projects</h1>
+    </header>
 
-      <main>
-        <article>
-          <h2 class="no-pad">EAGLE ML</h2>
-          <h3 class="bar">&ensp;|&ensp;</h3>
-          <h3 class="sub-text">Applied Research Lab at Penn State</h3>
-          <p>Just hide-and-seek for big kids with deep pockets.</p>
-
-          <div class="promo-block">
-            <div class="panel-label">Sponsored</div>
-            <div class="promo-content">
-              <h4>✍️ Start Your Project Today!</h4>
-              <p>
-                Create beautiful projects with a project master. Easy setup, custom themes, and analytics
-                included!
-              </p>
-              <button class="promo-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-                Get Started
-              </button>
-            </div>
-          </div>
-
-          <h2>Recipe Recommender</h2>
-          <p>I see you liked grilled cheese. You may also like five more grilled cheese recipes.</p>
-
-          <div class="promo-block">
-            <div class="panel-label">Sponsored</div>
-            <div class="promo-content">
-              <h4>💼 Remote Jobs for ML Engineers</h4>
-              <p>
-                Experience with remote positions for ML and R&D jobs across the nation. Applied to 500+
-                machine learning positions!
-              </p>
-              <button class="promo-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-                Find the Perfect Candidate
-              </button>
-            </div>
-          </div>
-
-          <h2>Magnetic Reconnection</h2>
-          <p>It's not fair for them to be apart when it's clear they want to be together.</p>
-
-          <div class="promo-block">
-            <div class="panel-label">Advertisement</div>
-            <div class="promo-content">
-              <h4>🚀 Boost Your Coding Skills!</h4>
-              <p>
-                Hire someone with experience with Python, C#, C++, SQL & more. Send in your offer today!
-              </p>
-              <button class="promo-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-                Learn More
-              </button>
-            </div>
-          </div>
-
-          <h2>Braking Trajectories</h2>
-          <h3 class="bar">&ensp;|&ensp;</h3>
-          <h3 class="sub-text">Argonne National Laboratory</h3>
-          <p>I broke a few, but it was surprisingly quite a bit more difficult than I was expecting.</p>
-
-          <div class="promo-block">
-            <div class="panel-label">Advertisement</div>
-            <div class="promo-content">
-              <h4>📊 Mastered Data Science in 2023</h4>
-              <p>From beginner to expert in 2 years. Worked with 50+ students in BYU's ACME program!</p>
-              <button class="promo-button" onclick="window.open('./resume/Resume2025.pdf', '_blank')">
-                View Courses
-              </button>
-            </div>
-          </div>
-
-          <h2>Music Score Follower</h2>
-          <h3 class="bar">&ensp;|&ensp;</h3>
-          <h3 class="sub-text">Brigham Young University</h3>
-          <p>Just so you always know who's winning... and who needs to be kicked from the orchestra.</p>
-
-          <h2>Unicyclic Graphs</h2>
-          <h3 class="bar">&ensp;|&ensp;</h3>
-          <h3 class="sub-text">Brigham Young University</h3>
-          <p>There's a reason why I want to be able to ride a unicycle.</p>
-        </article>
-      </main>
-    </div>
-
-    <section class="signup-section">
-      <div class="signup-container">
-        <h2>Stay Connected</h2>
-        <p class="signup-description">
-          Provide your email and receive a resumé delivered straight to your inbox
-        </p>
-        <form class="signup-form">
-          <input type="email" class="signup-input" placeholder="Enter your email" required />
-          <button type="submit" class="signup-button">Subscribe</button>
-        </form>
-        <p class="signup-disclaimer">No spam, subscribe anytime</p>
-      </div>
-    </section>
-
-    <button class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-      <span class="arrow-up">↑</span>
-    </button>
-
-    <div class="cookie-consent" id="cookieConsent">
-      <div class="cookie-content">
-        <p>We use cookies to enhance your experience</p>
-        <div class="cookie-buttons">
-          <button class="cookie-reject" onclick="rejectCookies()">Reject</button>
-          <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="newsletter-popup" id="newsletterPopup" style="display: none">
-      <div class="popup-overlay" onclick="closeNewsletterPopup()"></div>
-      <div class="popup-content">
-        <button class="popup-close" onclick="closeNewsletterPopup()">×</button>
-        <h2>📧 Frustrated with popups?</h2>
+    <main>
+      <article>
+        <br />
         <p>
-          No solution for that, but there's no need to be frustrated with the wrong candidate for your
-          job! Find out first when Christian is open to work!
+          Over the past year or so, I've realized that I enjoy doing some things and I've been doing them
+          for a little while now. Mostly I have considered these to be true hobbies, meaning I do them to
+          do them&mdash;not to break records or make money or really even to push myself. That being
+          said, I do want to improve and get better and do bigger things, so I have decided to make some
+          more specific goals to work towards. That should help me push myself and continue getting
+          satisfaction out of these activities.
         </p>
-        <form class="popup-form" onsubmit="handleNewsletterSubmit(event)">
-          <input type="email" class="popup-input" placeholder="Enter your email address" required />
-          <button type="submit" class="popup-button">Subscribe Now</button>
-        </form>
-        <p class="popup-disclaimer">Join subscribers. Subscribe anytime.</p>
-      </div>
-    </div>
+        <br />
 
-    <div class="exit-intent-popup" id="exitIntentPopup" style="display: none">
-      <div class="popup-overlay" onclick="closeExitIntentPopup()"></div>
-      <div class="exit-popup-content">
-        <button class="popup-close" onclick="closeExitIntentPopup()">×</button>
-        <h2>🛑 Wait! Don't Leave Yet!</h2>
+        <div class="projects-grid">
+          <a class="projects-grid-tile" href="./projects/blood.html">Blood</a>
+          <a class="projects-grid-tile" href="./projects/japanese.html">Japanese</a>
+          <a class="projects-grid-tile" href="./projects/hiking.html">Hiking</a>
+          <a class="projects-grid-tile" href="./projects/photography.html">Photography</a>
+          <a class="projects-grid-tile" href="./projects/triathlon.html">Triathlon</a>
+          <span class="projects-grid-tile projects-grid-tile-empty"></span>
+        </div>
+
         <p>
-          Before you go, grab your <strong>FREE Candidate Resumé</strong> - packed with essential skills,
-          experiences, and impressive classes!
+          This text was originally written using Helvetica.
+          <img class="penguin-img" src="img/penguin.png" width="18" height="18" alt="" />
         </p>
-        <form class="popup-form" onsubmit="handleExitIntentSubmit(event)">
-          <input
-            type="email"
-            class="popup-input"
-            placeholder="Enter your email for instant download"
-            required
-          />
-          <button type="submit" class="exit-popup-button">Get My Free Resumé</button>
-        </form>
-        <p class="popup-disclaimer">✅ Instant download • ✅ No spam • ✅ Subscribe anytime</p>
-        <div class="exit-popup-benefits">
-          <p><strong>What's included:</strong></p>
-          <ul>
-            <li>🔥 15+ must-have quantitative skills</li>
-            <li>🚀 Python code projects</li>
-            <li>📊 Data preprocessing experiences</li>
-            <li>💡 Pulbications and Conferences</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        <br />
+      </article>
+    </main>
 
-    <div class="chatbot-widget" id="chatbotWidget">
-      <div class="chatbot-suggestions suggestion-bubble-1" id="suggestionBubble1" style="display: none">
-        <div class="suggestions-content">
-          <h3>👋 Hi there!</h3>
-          <p>
-            I'm here to help you learn more about Christian's work and experience. Click here to start a
-            conversation!
-          </p>
-        </div>
-      </div>
-      <div class="chatbot-suggestions suggestion-bubble-2" id="suggestionBubble2" style="display: none">
-        <div class="suggestions-content">
-          <h3>💼 What can I tell you?</h3>
-          <ul>
-            <li>Professional experience at MetaSource, Penn State, and Argonne</li>
-            <li>Machine Learning and Applied Mathematics background</li>
-            <li>Current projects and research interests</li>
-          </ul>
-        </div>
-      </div>
-      <div class="chatbot-suggestions suggestion-bubble-3" id="suggestionBubble3" style="display: none">
-        <div class="suggestions-content">
-          <h3>🚀 Ready to connect?</h3>
-          <p>
-            Ask me anything about Christian's skills, projects, or how to get in touch for collaboration
-            opportunities!
-          </p>
-        </div>
-      </div>
-      <div class="chatbot-toggle" onclick="toggleChatbot()">
-        <span class="chat-icon">💬</span>
-      </div>
-      <div class="chatbot-window" id="chatbotWindow" style="display: none">
-        <div class="chatbot-header">
-          <h4>Chat with Christian</h4>
-          <button class="chatbot-close" onclick="closeChatbot()">×</button>
-        </div>
-        <div class="chatbot-messages" id="chatbotMessages">
-          <div class="bot-message">
-            Hi! I'm here to help. Feel free to ask me about Christian's work, experience, or projects.
-          </div>
-        </div>
-        <div class="chatbot-input">
-          <input
-            type="text"
-            id="chatInput"
-            placeholder="Type your message..."
-            onkeypress="handleChatInput(event)"
-          />
-          <button onclick="sendMessage()">Send</button>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      function handleNewsletterSubmit(event) {
-        event.preventDefault();
-        alert("Thank you for subscribing! (This is a demo)");
-        closeNewsletterPopup();
-      }
-
-      function handleExitIntentSubmit(event) {
-        event.preventDefault();
-        alert("Thank you! Your ML cheat sheet is downloading... (This is a demo)");
-        closeExitIntentPopup();
-      }
-    </script>
+    <footer>
+      <ul>
+        <li>
+          <span class="footer-text"
+            ><img class="penguin-img" src="img/penguin.png" alt="" /> Christian Howell</span
+          >
+        </li>
+        <li>
+          <img src="img/github-logo.png" class="footer-icon-lg" alt="" />
+          <a href="https://github.com/cahowell0" target="_blank" class="footer-text"
+            >github.com/cahowell0</a
+          >
+        </li>
+        <li>
+          <img src="img/linkedin-logo.png" class="footer-icon-sm" alt="" />
+          <a href="https://www.linkedin.com/in/howellchristian" target="_blank" class="footer-text"
+            >linkedin.com/in/howellchristian</a
+          >
+        </li>
+        <li>
+          <img src="img/email-logo.png" class="footer-icon-sm" alt="" />
+          <a
+            href="mailto:cahowell0@gmail.com"
+            class="footer-text"
+            style="color: inherit; text-decoration: none"
+            >cahowell0@gmail.com</a
+          >
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>

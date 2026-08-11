@@ -10,7 +10,11 @@
     <title>Christian Howell: Anatomy of a Website</title>
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script defer src="./js/site.js"></script>
-    <script data-goatcounter="https://cahowell0.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script
+      data-goatcounter="https://cahowell0.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
   </head>
 
   <body>
@@ -35,11 +39,14 @@
     <nav class="main-nav">
       <ul>
         <li>
-          <a href="./index.html">About <img class="penguin-img-big" src="img/penguin.png" alt="" /></a>
+          <a href="./index.html">Home <img class="penguin-img-big" src="img/penguin.png" alt="" /></a>
         </li>
-        <li><a href="./resume/Resume2025.pdf" target="_blank">Resume</a></li>
-        <li><a href="https://github.com/cahowell0" target="_blank">Github</a></li>
-        <li><a href="./projects.html">Projects </a></li>
+        <li>
+          <a href="./portfolio.html"><span style="color: #38568c">Casa</span> delle Foglie</a>
+        </li>
+        <li><a href="./books.html">Reading</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./osomichi.html">僕の遅道</a></li>
       </ul>
     </nav>
 
@@ -54,7 +61,15 @@
               <span id="panelSize1">[this much space]</span> on your screen.
             </p>
             <img src="./img/IMG_1104.JPG" class="sidebar-panel-img" alt="IMG_1104" />
-            <button class="sidebar-panel-button" onclick="window.open('./img/IMG_1104.JPG', '_blank')">
+            <button
+              class="sidebar-panel-button"
+              onclick="
+                openImageLightbox(
+                  './img/IMG_1104.JPG',
+                  'Hey, there!  Just your friendly neighborhood House Sparrow minding his own business!  Well, friendly is a relative term, especially when talking about an invasive species that sometimes bullies other birds out of their nests and that was introduced to the United States for the explicit purpose of helping to exterminate the linden moth caterpillar.  But whether you consider me a pest or a pet, we can all agree that we House Sparrows are quite adorable when hopping around on the ground.',
+                )
+              "
+            >
               Button here
             </button>
           </div>
@@ -69,7 +84,15 @@
               <span id="panelSize2">[this much space]</span> on your screen.
             </p>
             <img src="./img/IMG_1113.JPG" class="sidebar-panel-img" alt="IMG_1113" />
-            <button class="sidebar-panel-button" onclick="window.open('./img/IMG_1113.JPG', '_blank')">
+            <button
+              class="sidebar-panel-button"
+              onclick="
+                openImageLightbox(
+                  './img/IMG_1113.JPG',
+                  'Hi!  I\'m a Rock Pigeon!  Most people think rock pigeons are gross and have no redeeming factors, but that\'s not true.  Rock pigeons were domesticated by humans over 5000 years ago, and due to our ability to smell the Earth\'s magnetic fields, we are master navigators—even blindfolded!  This skill led me to convey messages for the US military during both World Wars.',
+                )
+              "
+            >
               Click here
             </button>
           </div>
@@ -111,11 +134,17 @@
           </div>
 
           <p>
-            I'm Christian. I like puzzles and problem-solving. Professionally, I am working as a machine
-            learning engineer. But in my off time I enjoy running, riding bikes, and reading books. I
-            have also been spending time recently pretending I can swim, pretending I can play the
-            guitar, and pretending a can juggle while riding a unicycle. Mostly, I just like learning new
-            things and taking on new challenges.
+            I'm Christian. My job takes up a good chunk of my day each day, and while I am there, I am
+            sorted into the "software engineer" or "machine learning engineer" bucket. At one point, a
+            job and a title meant something to me. When I was in college I told everyone that I was a
+            student and that I was studying math. People cared (or at least pretended to care) about
+            that, and that is what they would ask me about. When I graduated, the question changed from
+            "What are you studying?" to "What are you doing?" or "Where are you working?" Both are valid
+            questions, but increasingly, I have come to understand the cliché that we are not what we do.
+            So, while professionally I may fit neatly into the "software engineer" bucket, with
+            experience with Python, C#, SQL, Git, Bash scripting, and building using AI tools like
+            Copilot and Claude Code, I am personally more interested in what I am doing
+            <em>outside</em> of work.
           </p>
 
           <div class="promo-block" id="secondMidPromo">
@@ -135,15 +164,13 @@
           </div>
 
           <p>
-            I graduated from Brigham Young University in 2023, majoring in applied math with an emphasis
-            in physics. I also minored in Japanese. After graduating, I spent some time at Argonne
-            National Lab in Illinois modeling the energy usage and regeneration of autonomous electric
-            vehicles. I hopped up to Pennsylvania for a brief stint with the Applied Research Lab at Penn
-            State University, working with a team training neural networks to increase the speed and
-            accuracy of TDOA object tracking techniques. Following my time at ARL, I accepted a position
-            as a machine learning engineer at MetaSource, where I am currently. My time here is largely
-            spent building programs aimed at increasing the efficiency of reading and classifying
-            document types.
+            Don't get me wrong; I don't hate working, I don't hate my job, and I am happy to talk about
+            what I do with interested parties. But I think there is a beauty in maintaining passions and
+            hobbies purely for the sake of those passions and hobbies. So if you want to learn about who
+            I am at work, then check out this
+            <a href="atWork.html" style="color: inherit">Page About Who I Am at Work</a>. If you want to
+            learn about who I am outside of work, then check out this
+            <a href="outsideWork.html" style="color: inherit">Page About Who I Am Outside of Work</a>.
           </p>
 
           <div class="promo-block" id="thirdMidPromo">
@@ -166,8 +193,8 @@
 
           <p>
             I am always looking for new opportunities, so if you are looking for somebody to join your
-            team to work on difficult and interesting problems, please reach out. I would love to hear
-            from you.
+            team to work on difficult and interesting problems, please reach out. If you are in Utah and
+            you want to do something crazy (with at least a minimal safety threshold), please reach out.
           </p>
           <p>
             This text was originally written using Helvetica.
@@ -330,8 +357,6 @@
       </div>
     </div>
 
-    <img id="penguin-spin-cursor" src="./img/penguin-cursor.png" alt="" />
-
     <script>
       // Pixel size measurement (index-only)
       function updateAdPixelSize() {
@@ -367,18 +392,6 @@
 
       window.addEventListener("resize", updateAdPixelSize);
 
-      // Spinning penguin cursor on hover
-      const spinCursor = document.getElementById("penguin-spin-cursor");
-
-      document.addEventListener("mousemove", (e) => {
-        spinCursor.style.left = e.clientX + "px";
-        spinCursor.style.top = e.clientY + "px";
-      });
-
-      document.addEventListener("mouseover", (e) => {
-        spinCursor.style.display = e.target.closest("a, button, [onclick]") ? "block" : "none";
-      });
-
       // Alternating images for third mid-text promo
       const thirdPromoImg = document.getElementById("thirdPromoImg");
       const thirdPromos = [
@@ -396,9 +409,11 @@
             thirdPromoImg.src = thirdPromos[thirdPromoIndex].src;
             thirdPromoImg.style.height = thirdPromos[thirdPromoIndex].height;
             thirdPromoImg.style.display = "block";
-            requestAnimationFrame(() => requestAnimationFrame(() => {
-              thirdPromoImg.style.opacity = "1";
-            }));
+            requestAnimationFrame(() =>
+              requestAnimationFrame(() => {
+                thirdPromoImg.style.opacity = "1";
+              }),
+            );
           }, 300);
         }, 200);
       }, 8000);
@@ -415,8 +430,13 @@
         const email = document.getElementById("signupEmail").value.trim();
         emailjs
           .send("service_nhiyukv", "template_0gk3gmm", { subscriber_email: email })
-          .then(() => { alert("Thanks for subscribing!"); event.target.reset(); })
-          .catch(() => { alert("Something went wrong. Please try again."); });
+          .then(() => {
+            alert("Thanks for subscribing!");
+            event.target.reset();
+          })
+          .catch(() => {
+            alert("Something went wrong. Please try again.");
+          });
       }
 
       function handleExitIntentSubmit(event) {
@@ -429,8 +449,24 @@
             event.target.reset();
             closeExitIntentPopup();
           })
-          .catch(() => { alert("Something went wrong. Please try again."); });
+          .catch(() => {
+            alert("Something went wrong. Please try again.");
+          });
       }
+
+      function openImageLightbox(src, caption) {
+        document.getElementById("lightboxImg").src = src;
+        document.getElementById("lightboxCaption").textContent = caption;
+        document.getElementById("imageLightbox").style.display = "flex";
+      }
+
+      function closeImageLightbox() {
+        document.getElementById("imageLightbox").style.display = "none";
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeImageLightbox();
+      });
 
       document.addEventListener("DOMContentLoaded", () => {
         emailjs.init("MpEdHmzyYZ_cDB5Tw");
@@ -445,22 +481,41 @@
       });
     </script>
 
+    <div id="imageLightbox" style="display: none" onclick="closeImageLightbox()">
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <button class="lightbox-close" onclick="closeImageLightbox()">×</button>
+        <img id="lightboxImg" src="" alt="" />
+        <p id="lightboxCaption"></p>
+      </div>
+    </div>
+
     <footer>
       <ul>
         <li>
-          <span class="footer-text"><img class="penguin-img" src="img/penguin.png" alt="" /> Christian Howell</span>
+          <span class="footer-text"
+            ><img class="penguin-img" src="img/penguin.png" alt="" /> Christian Howell</span
+          >
         </li>
         <li>
           <img src="img/github-logo.png" class="footer-icon-lg" alt="" />
-          <a href="https://github.com/cahowell0" target="_blank" class="footer-text">github.com/cahowell0</a>
+          <a href="https://github.com/cahowell0" target="_blank" class="footer-text"
+            >github.com/cahowell0</a
+          >
         </li>
         <li>
           <img src="img/linkedin-logo.png" class="footer-icon-sm" alt="" />
-          <a href="https://www.linkedin.com/in/howellchristian" target="_blank" class="footer-text">linkedin.com/in/howellchristian</a>
+          <a href="https://www.linkedin.com/in/howellchristian" target="_blank" class="footer-text"
+            >linkedin.com/in/howellchristian</a
+          >
         </li>
         <li>
           <img src="img/email-logo.png" class="footer-icon-sm" alt="" />
-          <a href="mailto:cahowell0@gmail.com" class="footer-text">cahowell0@gmail.com</a>
+          <a
+            href="mailto:cahowell0@gmail.com"
+            class="footer-text"
+            style="color: inherit; text-decoration: none"
+            >cahowell0@gmail.com</a
+          >
         </li>
       </ul>
     </footer>
